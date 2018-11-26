@@ -11,16 +11,13 @@ class Example(QWidget):
         self.setGeometry(400, 400, 400, 400)
         self.setWindowTitle('Вторая программа')
 
-        #Кнопка загрузки изображения
         self.btn = QPushButton('Показать картинку', self)
         self.btn.move(120, 340)
         self.btn.clicked.connect(self.run)
 
-        ## Поле для ввода имени файла
         self.file_name = QLineEdit(self)
         self.file_name.move(140, 20)
 
-        ## Изображение
         self.pixmap = QPixmap()
         self.image = QLabel(self)
         self.image.move(80,60)
@@ -30,7 +27,6 @@ class Example(QWidget):
 
 
     def run(self):
-        ## Загружаем изображение и отображаем его
         self.pixmap.load(self.file_name.text())
         self.image.setPixmap(self.pixmap)
 

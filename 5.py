@@ -4,7 +4,6 @@ import sys
 
 
 class XOIterator:
-    ## Итератор, генерирующий крестик или нолик. По очереди
     def __init__(self, init='X'):
         if init == "X":
             self.status = True
@@ -30,15 +29,12 @@ class Example(QWidget):
         self.setGeometry(400, 400, 300, 400)
         self.setWindowTitle('Крестики-нолики')
 
-        ## Создание матрицы кнопок, поля.
         self.button_grid = [[QPushButton(self) for i in range(3)] for i in range(3)]
 
-        ## Поле для вывода результата
         self.result = QLabel(self)
         self.result.move(100, 300)
         self.result.setFixedWidth(200)
 
-        ## RadioButton, для выбора первого хода
         self.x = QRadioButton(self)
         self.x.setText("X")
         self.x.move(120, 20)
@@ -56,14 +52,12 @@ class Example(QWidget):
         self.clear.move(100, 350)
         self.clear.clicked.connect(self.run2)
 
-        ## Размещение поля на экране
         for i in range(len(self.button_grid)):
             for j in range(len(self.button_grid[i])):
                 self.button_grid[i][j].move(65 * (i + 1), 65 * (j + 1))
                 self.button_grid[i][j].resize(60, 60)
                 self.button_grid[i][j].clicked.connect(self.run)
 
-    ## Возвращает все возможные наборы (вертикали, горизонтали и диагонали)
     def all_path(self):
         res = [[i[0] for i in self.grid]]
         res += [[i[1] for i in self.grid]]
@@ -82,13 +76,11 @@ class Example(QWidget):
         if self.check_all():
             self.result.setText("Ничья!".format(i[0]))
 
-    ## Выбор первого игрока и очистка поля.
     def run2(self):
         self.xo = XOIterator(self.sender().text())
         [[s.setText("") for s in i] for i in self.button_grid]
         self.result.setText("")
 
-    ## Ход. Нажатие на кнопку.
     def run(self):
         if (self.sender().text() == ''):
             self.sender().setText(next(self.xo))
