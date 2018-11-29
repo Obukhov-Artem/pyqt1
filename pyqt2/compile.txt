@@ -1,0 +1,6 @@
+C:\Users\User>cd C:\Users\User\PycharmProjects\pyqt1\pyqt2
+
+C:\Users\User\PycharmProjects\pyqt1\pyqt2>python -m PyQt5.uic.pyuic -x my.ui -o flag_ui.py
+
+C:\Users\User\PycharmProjects\pyqt1\pyqt2>
+
