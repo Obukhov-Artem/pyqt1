@@ -8,9 +8,7 @@ class Example(QWidget):
 
     def __init__(self):
         super().__init__()
-        ## Список доступных картинок
         self.cars = ['car2.png','car3.png','car4.png']
-        ## Изначальная картинка
         self.current = 'car2.png'
         self.initUI()
 
@@ -25,17 +23,14 @@ class Example(QWidget):
 
         self.show()
 
-    ## Обработка движения мыши
     def mouseMoveEvent(self, event):
         if (event.x() in range(0,250) and event.y() in range(0,250)):
             self.lbl.move(event.x(), event.y())
 
-    ## Обработка нажатия на клавиатуру
     def keyPressEvent(self, event):
         if event.key() == Qt.Key_Space:
             tmp = copy.copy(self.cars)
             tmp.remove(self.current)
-            ## Получение случайного изображения
             self.current = random.choice(tmp)
             self.pixmap.load(self.current)
             self.lbl.setPixmap(self.pixmap)

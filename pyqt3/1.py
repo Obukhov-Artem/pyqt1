@@ -22,7 +22,6 @@ class Example(QWidget):
         self.show()
 
     def run(self):
-        ## Ввод количества цветов с помощью диалогового окна
         i,okBtnPressed = QInputDialog.getInt(self, "Введите число цветов флага", "Сколько цветов?", 3, 1, 10, 1)
         if okBtnPressed:
             self.flag = None
@@ -38,12 +37,9 @@ class Example(QWidget):
     def drawFlag(self,qp):
         base = copy.copy(self.base)
         for i in range(self.draw):
-            ## Генерация случайного цвета по RGB-схеме
             rand_color = QColor(*[random.randrange(255) for _ in range(3)])
             qp.setBrush(rand_color)
-            ## Рисуем полоску
             qp.drawRect(*base)
-            ## Смещаемся вниз
             base[1]+=30
         self.draw = None
 
