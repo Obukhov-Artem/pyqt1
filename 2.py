@@ -8,7 +8,7 @@ class Example(QWidget):
         self.initUI()
 
     def initUI(self):
-        self.setGeometry(400, 400, 400, 400)
+        self.setGeometry(600, 600, 600, 400)
         self.setWindowTitle('Вторая программа')
 
         self.btn = QPushButton('Показать картинку', self)
@@ -17,7 +17,7 @@ class Example(QWidget):
 
         self.file_name = QLineEdit(self)
         self.file_name.move(140, 20)
-
+        print("test")
         self.pixmap = QPixmap()
         self.image = QLabel(self)
         self.image.move(80,60)
