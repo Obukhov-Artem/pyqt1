@@ -20,15 +20,12 @@ class Example(QWidget):
         print("test")
         self.pixmap = QPixmap()
         self.image = QLabel(self)
-        self.image.move(80,60)
+        self.image.move(1280,260)
         self.image.resize(250,250)
         self.image.setPixmap(self.pixmap)
 
 
 
-    def run(self):
-        self.pixmap.load(self.file_name.text())
-        self.image.setPixmap(self.pixmap)
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
