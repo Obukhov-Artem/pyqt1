@@ -11,13 +11,12 @@ class Example(QWidget):
         self.setGeometry(600, 600, 600, 400)
         self.setWindowTitle('Вторая программа')
 
-        self.btn = QPushButton('Показать картинку', self)
+        self.btn = QPushButton('111', self)
         self.btn.move(120, 340)
         self.btn.clicked.connect(self.run)
 
         self.file_name = QLineEdit(self)
         self.file_name.move(140, 20)
-        print("test")
         self.pixmap = QPixmap()
         self.image = QLabel(self)
         self.image.move(1280,260)
