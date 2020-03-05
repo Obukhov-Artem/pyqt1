@@ -18,6 +18,7 @@ class Example(QWidget):
         self.file_name = QLineEdit(self)
         self.file_name.move(140, 20)
         print("test")
+        print("test2")
         self.pixmap = QPixmap()
         self.image = QLabel(self)
         self.image.move(80,60)
