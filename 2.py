@@ -8,7 +8,7 @@ class Example(QWidget):
         self.initUI()
 
     def initUI(self):
-        self.setGeometry(600, 600, 600, 400)
+        self.setGeometry(300, 300, 600, 400)
         self.setWindowTitle('Вторая программа')
 
         self.btn = QPushButton('111', self)
