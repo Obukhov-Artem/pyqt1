@@ -17,6 +17,8 @@ class Example(QWidget):
 
         self.file_name = QLineEdit(self)
         self.file_name.move(140, 20)
+        print("test")
+        print("test2")
         self.pixmap = QPixmap()
         self.image = QLabel(self)
         self.image.move(1280,260)
@@ -25,6 +27,9 @@ class Example(QWidget):
 
 
 
+    def run(self):
+        self.pixmap.load(self.file_name.text())
+        self.image.setPixmap(self.pixmap)
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
